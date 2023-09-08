@@ -1,4 +1,4 @@
-# book-tracking-app
+# Book Tracking App
 A website for tracking book reading.
 On this website, users should be able to:
 
@@ -11,14 +11,14 @@ Book Entry should only contain book title and nothing else. There is no need to 
 
 For this task, you're required to craft both a frontend (using NextJS) and a backend (with Python + FastAPI).
 
-Build the entire stack with
+#### Build the entire stack with
 
 
 ```bash
 docker-compose build
 ```
 
-# then
+#### then
 
 ```bash
 
