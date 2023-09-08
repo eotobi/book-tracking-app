@@ -10,3 +10,18 @@ Delete any book entry.
 Book Entry should only contain book title and nothing else. There is no need to add editing functionality.
 
 For this task, you're required to craft both a frontend (using NextJS) and a backend (with Python + FastAPI).
+
+Build the entire stack with
+
+
+```bash
+docker-compose build
+```
+
+# then
+
+```bash
+
+docker-compose up
+
+```
