@@ -80,7 +80,7 @@ async def update_book(id: int, book_info: BookOut_Pydantic):
     book = await Book.get(id=id)
     book.name = book_info.name
     book.reading=book_info.reading
-    book.to_read=book_info.to_read,
+    book.to_read=book_info.to_read
     book.completed=book_info.completed
     await book.save()
     book = await BookIn_Pydantic.from_tortoise_orm(book)
