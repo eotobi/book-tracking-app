@@ -9,6 +9,7 @@ from tortoise import fields
 
 
 class Book(Model):
+    """Class that represents the book model"""
     name = fields.CharField(max_length=255)
     # status = fields.CharEnumField(BookStatusChoices, max_length=255)
     reading= fields.BooleanField(default=False)

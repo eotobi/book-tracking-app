@@ -14,3 +14,5 @@ starlette==0.19.1
 tortoise-orm==0.19.2
 typing-extensions==4.3.0
 uvicorn==0.18.2
+httpx
+pytest

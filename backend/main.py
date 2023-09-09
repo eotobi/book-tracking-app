@@ -28,6 +28,7 @@ register_tortoise(
 
 @app.post('/api/v1/add-book/')
 async def add_book(book: BookOut_Pydantic):
+    """add books to database"""
     book_obj = Book(
         name=book.name,
         reading=book.reading,
@@ -45,27 +46,29 @@ async def add_book(book: BookOut_Pydantic):
 
 @app.get('/api/v1/books-list/')
 async def books_list():
+    """return a list of books"""
     books = await Book.all()
-    # return books
     json_data = jsonable_encoder(books)
     return JSONResponse(
-        status_code=status.HTTP_201_CREATED,
+        status_code=status.HTTP_200_OK,
         content=json_data
     )
 
 
 @app.get('/api/v1/book-details/{id}')
 async def book_details(id: int):
+    """show details of book picked"""
     book = await Book.get(id=id)
     json_data = jsonable_encoder(book)
     return JSONResponse(
-        status_code=status.HTTP_201_CREATED,
+        status_code=status.HTTP_200_OK,
         content=json_data
     )
 
 
 @app.delete('/api/v1/delete-book/{id}')
 async def delete_book(id: int):
+    """delete a book"""
     book = await Book.get(id=id)
     await book.delete()
     return {'details': "deleted"}
@@ -73,6 +76,7 @@ async def delete_book(id: int):
 
 @app.put('/api/v1/book-update/{id}')
 async def update_book(id: int, book_info: BookOut_Pydantic):
+    """modify/update a book"""
     book = await Book.get(id=id)
     book.name = book_info.name
     book.reading=book_info.reading
@@ -82,6 +86,6 @@ async def update_book(id: int, book_info: BookOut_Pydantic):
     book = await BookIn_Pydantic.from_tortoise_orm(book)
     json_data = jsonable_encoder(book)
     return JSONResponse(
-        status_code=status.HTTP_201_CREATED,
+        status_code=status.HTTP_200_OK,
         content=json_data
     )

@@ -59,7 +59,7 @@ const useInterCeptor = () => {
             }
             else if (error.response.status === 401) {
                 localStorage.clear()
-                deleteAllCookies(); // delete all cookes if user not authenticated
+                deleteAllCookies(); // delete all cookies if user not authenticated
                 // toast.error(error.response.details);
 
             }

@@ -15,13 +15,13 @@ For this task, you're required to craft both a frontend (using NextJS) and a bac
 
 
 ```bash
-docker-compose build
-```
+docker-compose up -d
 
+```
 #### then
 
 ```bash
-
-docker-compose up
-
+start http://localhost:3000
 ```
+
+#### if 'start' cannot be found copy the link http://localhost:3000 on your browser 
